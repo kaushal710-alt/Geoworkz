@@ -29,5 +29,8 @@ public class HomePageTest extends BaseTest {
 	    System.out.println("Git practice7");
 	    System.out.println("Git practice8");
 	    System.out.println("Git practice9");
+	    System.out.println("Git practice10");
+	    System.out.println("Git practice11");
+	    System.out.println("Git practice12");
 	}
 }
