@@ -20,5 +20,6 @@ public class HomePageTest extends BaseTest {
 		HomePage home = new HomePage(driver);
 	    home.getHomeLinkPresence();
 	    System.out.println("Git practice");
+	    System.out.println("Git practice1");
 	}
 }
