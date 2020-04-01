@@ -12,8 +12,7 @@ public class HomePageTest extends BaseTest {
 	{
 		HomePage home = new HomePage(driver);
 	    home.getLogoPresence();
-	    //home.getHomeLinkPresence();
-	    //org.testng.Assert.assertEquals(12, 13);
+	   
 	}
 	
     @Test
@@ -22,7 +21,7 @@ public class HomePageTest extends BaseTest {
 	{
 		HomePage home = new HomePage(driver);
 	    home.getHomeLinkPresence();
-	    //org.testng.Assert.assertEquals(12, 13);
+	   
 	   
 	}
 }
