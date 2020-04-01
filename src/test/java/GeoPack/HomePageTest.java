@@ -22,6 +22,7 @@ public class HomePageTest extends BaseTest {
 		HomePage home = new HomePage(driver);
 	    home.getHomeLinkPresence();
 	   System.out.println("Started Integration automatically");
+		System.out.println("again commited changes");
 	   
 	}
 }
