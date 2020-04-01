@@ -16,6 +16,8 @@ public class HomePage{
 	By logo = By.xpath("//img[@class='logo']");
 	By Home = By.id("menuHome");
 	By Support = By.cssSelector("a[id='menuSupport']");
+	By Product = By.cssSelector("a[id='menuProduct']");
+	By Contact = By.cssSelector("a[id='menuContact']");
 	
 	public void getLogoPresence() 
 	{
@@ -38,6 +40,14 @@ public class HomePage{
 	public void getSupportLinkPresence () 
 	{
 		Assert.assertTrue(driver.findElement(Support).isDisplayed(), "Support link is not displayed");
+	}
+	public void getProductLinkPresence () 
+	{
+		Assert.assertTrue(driver.findElement(Product).isDisplayed(), "Support link is not displayed");
+	}
+	public void getContactLinkPresence () 
+	{
+		Assert.assertTrue(driver.findElement(Contact).isDisplayed(), "Support link is not displayed");
 	}
 }
 

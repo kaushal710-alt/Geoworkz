@@ -28,7 +28,16 @@ public class HomePageTest extends BaseTest {
    	{
    		HomePage home = new HomePage(driver);
    	    home.getSupportLinkPresence();
-   	    System.out.println("Helloooooo");
-   	    
+   	}
+    
+    public void ProductLinkValidation () 
+   	{
+   		HomePage home = new HomePage(driver);
+   	    home.getProductLinkPresence();
+   	}
+    public void ContactLinkValidation () 
+   	{
+   		HomePage home = new HomePage(driver);
+   	    home.getContactLinkPresence();
    	}
 }
