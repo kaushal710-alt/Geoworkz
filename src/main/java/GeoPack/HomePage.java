@@ -2,6 +2,7 @@ package GeoPack;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
 public class HomePage{
@@ -30,7 +31,7 @@ public class HomePage{
 	
 	public void getHomeLinkPresence () 
 	{
-		Assert.assertTrue(driver.findElement(Home).isDisplayed(), "The Home link is displayed");
+		Assert.assertTrue(driver.findElement(Home).isDisplayed(), "The Home link is not displayed");
 	}
 	
 }

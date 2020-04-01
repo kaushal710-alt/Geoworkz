@@ -2,6 +2,8 @@ package GeoPack;
 
 import org.testng.annotations.Test;
 
+import junit.framework.Assert;
+
 public class HomePageTest extends BaseTest {
 	
 	@Test
@@ -10,7 +12,8 @@ public class HomePageTest extends BaseTest {
 	{
 		HomePage home = new HomePage(driver);
 	    home.getLogoPresence();
-	    home.getHomeLinkPresence();
+	    //home.getHomeLinkPresence();
+	    //org.testng.Assert.assertEquals(12, 13);
 	}
 	
     @Test
@@ -19,18 +22,7 @@ public class HomePageTest extends BaseTest {
 	{
 		HomePage home = new HomePage(driver);
 	    home.getHomeLinkPresence();
-	    System.out.println("Git practice");
-	    System.out.println("Git practice1");
-	    System.out.println("Git practic2");
-	    System.out.println("Git practice3");
-	    System.out.println("Git practice4");
-	    System.out.println("Git practice5");
-	    System.out.println("Git practice6");
-	    System.out.println("Git practice7");
-	    System.out.println("Git practice8");
-	    System.out.println("Git practice9");
-	    System.out.println("Git practice10");
-	    System.out.println("Git practice11");
-	    System.out.println("Git practice12");
+	    //org.testng.Assert.assertEquals(12, 13);
+	   
 	}
 }
