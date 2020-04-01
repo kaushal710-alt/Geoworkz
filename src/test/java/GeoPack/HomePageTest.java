@@ -29,5 +29,6 @@ public class HomePageTest extends BaseTest {
    		HomePage home = new HomePage(driver);
    	    home.getSupportLinkPresence();
    	    System.out.println("Hi");
+   	 System.out.println("Hello");
    	}
 }
