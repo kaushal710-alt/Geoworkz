@@ -11,8 +11,7 @@ public class HomePageTest extends BaseTest {
 	public void logoValidation () 
 	{
 		HomePage home = new HomePage(driver);
-	    home.getLogoPresence();
-	   
+	    home.getLogoPresence(); 
 	}
 	
     @Test
@@ -21,7 +20,14 @@ public class HomePageTest extends BaseTest {
 	{
 		HomePage home = new HomePage(driver);
 	    home.getHomeLinkPresence();
-	   System.out.println("It started of its own");
-	   
 	}
+    
+    @Test
+	
+   	public void SupportLinkValidation () 
+   	{
+   		HomePage home = new HomePage(driver);
+   	    home.getSupportLinkPresence();
+   	    System.out.println("Hi");
+   	}
 }
