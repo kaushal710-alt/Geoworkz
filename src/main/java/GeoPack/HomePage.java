@@ -21,6 +21,7 @@ public class HomePage{
 	
 	public void getLogoPresence() 
 	{
+	driver.findElement(By.xpath("//a[@id='btnAccept']")).click();
 	boolean b= 	driver.findElement(logo).isDisplayed();
 	if (b) 
 	{

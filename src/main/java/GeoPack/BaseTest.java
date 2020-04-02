@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +26,7 @@ public class BaseTest {
 	
 	public void initializeDriver () throws IOException 
 	{
+		//
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream (System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\Data.properties");
 		prop.load(fis);
@@ -61,7 +63,11 @@ public class BaseTest {
 			   driver = new InternetExplorerDriver();
 			   driver.get(prop.getProperty("url"));
 		 }   
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
+	
+	
 	
 @AfterSuite
   public void tearDown() 
