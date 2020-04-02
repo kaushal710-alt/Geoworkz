@@ -16,6 +16,5 @@ public class ProductTest extends BaseTest{
 	public void selectPlan() throws InterruptedException {
 	CartPage cartPage = new CartPage();
 	cartPage.getPlanDetails();
-	System.out.println("Hi");
 	}
 }
