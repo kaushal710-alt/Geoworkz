@@ -39,7 +39,7 @@ public class BaseTest {
            //dr.setBrowserName("chrome");
             //dr.setPlatform(Platform.WINDOWS);
            
-//	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
 			//driver=new RemoteWebDriver(new    URL("http://192.168.0.103:4444/wd/hub"), dr);
 	driver = new ChromeDriver();
 			driver.get(prop.getProperty("url"));	

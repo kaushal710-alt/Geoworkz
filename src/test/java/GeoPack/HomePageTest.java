@@ -5,20 +5,21 @@ import org.testng.annotations.Test;
 import junit.framework.Assert;
 
 public class HomePageTest extends BaseTest {
-	
+	HomePage home;
+	public void initializeHomepage () 
+	{
+		home = new HomePage(driver);
+	}
 	@Test
-	
 	public void logoValidation () 
 	{
-		HomePage home = new HomePage(driver);
+		initializeHomepage ();
 	    home.getLogoPresence(); 
 	}
-	
     @Test
-	
 	public void HomeLinkValidation () 
 	{
-		HomePage home = new HomePage(driver);
+    	initializeHomepage ();
 	    home.getHomeLinkPresence();
 	}
     
@@ -26,18 +27,19 @@ public class HomePageTest extends BaseTest {
 	
    	public void SupportLinkValidation () 
    	{
-   		HomePage home = new HomePage(driver);
+    	initializeHomepage ();
    	    home.getSupportLinkPresence();
    	}
     
     public void ProductLinkValidation () 
    	{
-   		HomePage home = new HomePage(driver);
+    	initializeHomepage ();
    	    home.getProductLinkPresence();
    	}
     public void ContactLinkValidation () 
    	{
-   		HomePage home = new HomePage(driver);
+    	initializeHomepage ();
    	    home.getContactLinkPresence();
+	   
    	}
 }
