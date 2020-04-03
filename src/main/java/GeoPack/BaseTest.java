@@ -24,7 +24,7 @@ public class BaseTest {
 	//DesiredCapabilities dr=null;
 	@BeforeSuite
 	
-	public void initializeDriver () throws IOException 
+	public void initializeDriver () throws IOException, InterruptedException 
 	{
 		//
 		prop = new Properties();
@@ -65,6 +65,7 @@ System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\c
 		 }   
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(3000);
 	}
 	
 	

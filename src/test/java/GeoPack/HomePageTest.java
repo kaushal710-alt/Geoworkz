@@ -24,13 +24,11 @@ public class HomePageTest extends BaseTest {
 	}
     
     @Test
-	
    	public void SupportLinkValidation () 
    	{
     	initializeHomepage ();
    	    home.getSupportLinkPresence();
    	}
-    
     public void ProductLinkValidation () 
    	{
     	initializeHomepage ();
@@ -40,6 +38,5 @@ public class HomePageTest extends BaseTest {
    	{
     	initializeHomepage ();
    	    home.getContactLinkPresence();
-	   
    	}
 }

@@ -2,6 +2,7 @@ package GeoPack;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
@@ -18,10 +19,12 @@ public class HomePage{
 	By Support = By.cssSelector("a[id='menuSupport']");
 	By Product = By.cssSelector("a[id='menuProduct']");
 	By Contact = By.cssSelector("a[id='menuContact']");
-	
+	By ourPlans = By.xpath("//a[@id='menuOurPlan']");
+	By acceptCookies = By.xpath("//a[@id='btnAccept']");
+
 	public void getLogoPresence() 
 	{
-	driver.findElement(By.xpath("//a[@id='btnAccept']")).click();
+	
 	boolean b= 	driver.findElement(logo).isDisplayed();
 	if (b) 
 	{
@@ -49,6 +52,18 @@ public class HomePage{
 	public void getContactLinkPresence () 
 	{
 		Assert.assertTrue(driver.findElement(Contact).isDisplayed(), "Support link is not displayed");
+	}
+	
+	public void clickOurPlansButton() 
+	{
+		
+		if (driver.findElement(acceptCookies).isDisplayed()) 
+		{
+			driver.findElement(acceptCookies).click();
+		}
+		Actions a = new Actions (driver);
+		a.moveToElement(driver.findElement(Product)).build().perform();
+		driver.findElement(ourPlans).click();
 	}
 }
 

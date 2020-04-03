@@ -11,7 +11,7 @@ public class CartPage extends BaseTest{
 	public void getPlanDetails () 
 	{
 		String planName= driver.findElement(nameOfPlan).getText();
-		System.out.println(planName);
+		//System.out.println(planName);
 		Assert.assertEquals(planName, "FreelancerFreeTrial");
 		
 		String words= driver.findElement(noOfWords).getText();
