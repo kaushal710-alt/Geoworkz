@@ -14,23 +14,19 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
-public class ReadingFromExcel  {
+public class ReadingFromExcel_oldMethod  {
 	
 	public  HashMap<String, String> getDataFromExcel () throws IOException 
-	
 	{
 		File file = new File (System.getProperty("user.dir") + "\\src\\main\\java\\Resources\\TestData.xlsx");
 		FileInputStream fis = new FileInputStream (file);
 		
 		XSSFWorkbook excel = new XSSFWorkbook(fis);
-		
 		XSSFSheet sheet = excel.getSheet("TestDataSheet");
 		Iterator <Row> row = sheet.iterator();
 		Row firstRow = row.next();  // This will take the control to first row
-		
 		Iterator <Cell> cell = firstRow.cellIterator();
 		int i=0;
-		
 		//String cellValue1 = "";
 		HashMap <String,String> map = new HashMap <String,String> ();
 		while (cell.hasNext()) 

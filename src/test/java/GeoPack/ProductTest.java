@@ -18,9 +18,36 @@ public class ProductTest extends BaseTest{
 	CartPage cpage = new CartPage();
 	cpage.getPlanDetails();
 	Thread.sleep(5000);
-	driver.findElement(By.xpath("//button[@id='btnCheckout']")).click();
+	cpage.clickCheckoutButton();
 	
-	ReadingFromExcel rfe = new ReadingFromExcel ();
+	
+	CheckOutFormPage cofp =new CheckOutFormPage ();
+	cofp.fillTheFormPage();
+	System.out.println("New Statement added");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*ReadingFromExcel rfe = new ReadingFromExcel ();
 	HashMap<String, String> username123=rfe.getDataFromExcel();
 	String username1 = username123.get("UserName");
 	String password2 = username123.get("Password");
@@ -43,7 +70,7 @@ public class ProductTest extends BaseTest{
 	driver.findElement(By.xpath("//input[@id='Address1']")).sendKeys(address);
 	driver.findElement(By.xpath("//input[@id='City']")).sendKeys(city);
 	driver.findElement(By.xpath("//input[@id='ZipPostalCode']")).sendKeys(zipCode);
-	driver.findElement(By.xpath("//input[@id='Phone']")).sendKeys(phone);
+	driver.findElement(By.xpath("//input[@id='Phone']")).sendKeys(phone);*/
 	
 	}
 	

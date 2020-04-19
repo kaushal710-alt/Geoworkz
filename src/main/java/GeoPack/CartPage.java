@@ -17,5 +17,11 @@ public class CartPage extends BaseTest{
 		String words= driver.findElement(noOfWords).getText();
 		Assert.assertEquals(words, "5,000");
 	}
+	
+	public void clickCheckoutButton () 
+	{
+		driver.findElement(By.xpath("//button[@id='btnCheckout']")).click();
+		
+	}
 
 }

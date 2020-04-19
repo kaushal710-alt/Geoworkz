@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite"  >
 
 <listeners>
 <listener  class-name="Resources.ExtentReporterNG" />
 <listener  class-name="GeoPack.Listener1" />
 </listeners>
-  <test thread-count="5" name="Test">
+  <test name="Test">
     <classes>
-      <class name="GeoPack.HomePageTest"/>
-      <class name="GeoPack.ProductTest"/>
+      <class name="GeoPack.Class1"/>
+      <class name="GeoPack.Class2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -7,13 +7,12 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="GeoPack.ProductTest">
+      <class name="GeoPack.Class2">
         <methods>
-          <include name="tearDown"/>
+          <include name="getTest2"/>
           <include name="initializeDriver"/>
-          <include name="checkoutProcess"/>
         </methods>
-      </class> <!-- GeoPack.ProductTest -->
+      </class> <!-- GeoPack.Class2 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
