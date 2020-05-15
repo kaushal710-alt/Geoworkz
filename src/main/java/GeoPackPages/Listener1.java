@@ -1,7 +1,8 @@
-package GeoPack;
+package GeoPackPages;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -32,10 +33,13 @@ public class Listener1 implements ITestListener{
 		String name = result.getName();
 		//BaseTest b = new BaseTest();
 		System.out.println(BaseTest.driver);
-		
+		Random r = new Random ();
+		int num = r.nextInt(1000);
 		TakesScreenshot ts = (TakesScreenshot) BaseTest.driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File (System.getProperty("user.dir")+ "/"+ name + "error.png");
+		File dest = new File (System.getProperty("user.dir") +"\\ScreenShots\\"+name+num+"error.png");
+		//File dest = new File (System.getProperty("user.dir")+ "\\ScreenShots" + name + "error.png");
+		//File dest = new File ("C:\\Users\\cc\\Desktop\\Testing\\Selenium\\Projects\\Geoworkz\\ScreenShots\\" + name + "error.png");
 		try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {

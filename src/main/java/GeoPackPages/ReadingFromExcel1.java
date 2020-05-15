@@ -1,4 +1,4 @@
-package GeoPack;
+package GeoPackPages;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GeoPack.ArrayList1">
+      <class name="GeoPack.FreelancerMonthly5000Test">
         <methods>
-          <include name="checkoutProcess"/>
+          <include name="FreelancerAnnually5000NoExtSupport"/>
           <include name="initializeDriver"/>
+          <include name="launchApplication"/>
         </methods>
-      </class> <!-- GeoPack.ArrayList1 -->
+      </class> <!-- GeoPack.FreelancerMonthly5000Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

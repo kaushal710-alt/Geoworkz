@@ -1,5 +1,7 @@
-package GeoPack;
+package GeoPackPages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -7,6 +9,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
 public class HomePage{
+	
+	private static Logger log = LogManager.getLogger(HomePage.class.getName());
 	
 	WebDriver driver;
 	public HomePage (WebDriver driver) 
@@ -25,38 +29,36 @@ public class HomePage{
 	public void getLogoPresence() 
 	{
 	
-	boolean b= 	driver.findElement(logo).isDisplayed();
-	if (b) 
-	{
-		System.out.println("The Geoworkz logo is displayed");
-	}
-	else 
-	{
-		System.out.println("The logo is not displayed");
-	}
+		Assert.assertTrue(driver.findElement(logo).isDisplayed(), "The geoworkz logo is not displayed");
+	log.info("Geoworkz logo is displayed");
+		
 	}
 	
 	public void getHomeLinkPresence () 
 	{
 		Assert.assertTrue(driver.findElement(Home).isDisplayed(), "The Home link is not displayed");
+		log.info("Home link is displayed");
 	}
 	
 	public void getSupportLinkPresence () 
 	{
 		Assert.assertTrue(driver.findElement(Support).isDisplayed(), "Support link is not displayed");
+		log.info("Support link is displayed");
 	}
 	public void getProductLinkPresence () 
 	{
-		Assert.assertTrue(driver.findElement(Product).isDisplayed(), "Support link is not displayed");
+		Assert.assertTrue(driver.findElement(Product).isDisplayed(), "Product link is  not displayed");
+		log.info("Product link is displayed");
 	}
 	public void getContactLinkPresence () 
 	{
-		Assert.assertTrue(driver.findElement(Contact).isDisplayed(), "Support link is not displayed");
+		Assert.assertTrue(driver.findElement(Contact).isDisplayed(), "Contact link is not displayed");
+		log.info("Contact link is displayed");
 	}
 	
-	public void clickOurPlansButton() 
+	public void clickOurPlansButton() throws InterruptedException 
 	{
-		
+		Thread.sleep(2000);
 		if (driver.findElement(acceptCookies).isDisplayed()) 
 		{
 			driver.findElement(acceptCookies).click();

@@ -1,4 +1,4 @@
-package GeoPack;
+package GeoPackPages;
 
 /**
  * Hello world!

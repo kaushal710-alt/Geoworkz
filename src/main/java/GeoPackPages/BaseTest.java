@@ -1,4 +1,4 @@
-package GeoPack;
+package GeoPackPages;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,18 +16,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class BaseTest {
 	
-	public static ThreadLocal<WebDriver> dr=new ThreadLocal<WebDriver>();
-	static WebDriver driver=null;
+	//public static ThreadLocal<WebDriver> dr=new ThreadLocal<WebDriver>();
+	public static WebDriver driver=null;
 	Properties prop;
 	//DesiredCapabilities dr=null;
-	@BeforeSuite
+	//@Parameters ({"browser"})
+	@BeforeMethod (alwaysRun=true)
 	
 	public void initializeDriver () throws IOException, InterruptedException 
 	{
@@ -39,60 +42,35 @@ public class BaseTest {
 		String browserName = prop.getProperty("browser");
 		
 		if (browserName.equalsIgnoreCase("chrome")) 
-		{
-			//dr=DesiredCapabilities.chrome();
-           //dr.setBrowserName("chrome");
-            //dr.setPlatform(Platform.WINDOWS);
-         ChromeOptions opt=new ChromeOptions();
-         opt.setPageLoadStrategy(PageLoadStrategy.NONE);
-			
-			
-System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
-			//driver=new RemoteWebDriver(new    URL("http://192.168.0.103:4444/wd/hub"), dr);
-	driver = new ChromeDriver(opt);
+		{	
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+			driver = new ChromeDriver();
+			driver.get(prop.getProperty("url"));
 		
 		}
 		else if(browserName.equals("firefox"))
-		 {
-			
-			 //dr=DesiredCapabilities.firefox();
-		      //  dr.setBrowserName("firefox");
-		      //  dr.setPlatform(Platform.WINDOWS);
+		{
 			 System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+ "\\geckodriver.exe");
 			   driver = new FirefoxDriver();
 			   driver.get(prop.getProperty("url"));
 		 }
-		 else if(browserName.equals("IE"))
-		 {
-			 //dr=DesiredCapabilities.internetExplorer();
-	           // dr.setBrowserName("iexplore");
-	            //dr.setPlatform(Platform.WINDOWS);
-			 System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+ "\\IEDriverServer.exe");
-			   driver = new InternetExplorerDriver();
-			   driver.get(prop.getProperty("url"));
-		 }   
+//		 //else if(browserName.equals("IE"))
+//		 {
+//			 
+//			 System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+ "\\IEDriverServer.exe");
+//			   driver = new InternetExplorerDriver();
+//			   driver.get(prop.getProperty("url"));
+//		 }   
 		
 		
-		setWebDriver(driver);
-		getDriver().get(prop.getProperty("url"));
-		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(3000);
-	}
-public void setWebDriver(WebDriver driver) {
-		// TODO Auto-generated method stub
-	dr.set(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 
-public WebDriver getDriver()
-{
-	return dr.get();
-	}
-
-
-//@AfterSuite
+@AfterMethod (alwaysRun=true) 
 public void tearDown() 
     {
 	driver.quit();	
 	}
+
 }

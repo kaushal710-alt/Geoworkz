@@ -1,12 +1,31 @@
 package GeoPack;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.sun.tools.sjavac.Log;
+
+import GeoPackPages.BaseTest;
+import GeoPackPages.CartPage;
+import GeoPackPages.CheckOutFormPage;
+import GeoPackPages.HomePage;
+import GeoPackPages.OurPlansPage;
+
 public class ProductTest extends BaseTest{
+	
+	private static Logger log = LogManager.getLogger(ProductTest.class.getName());
 	@Test
 	public void checkoutProcess() throws InterruptedException, IOException {
 	HomePage home = new HomePage(driver);
@@ -23,29 +42,6 @@ public class ProductTest extends BaseTest{
 	
 	CheckOutFormPage cofp =new CheckOutFormPage ();
 	cofp.fillTheFormPage();
-	System.out.println("New Statement added");
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	/*ReadingFromExcel rfe = new ReadingFromExcel ();
 	HashMap<String, String> username123=rfe.getDataFromExcel();
@@ -73,5 +69,26 @@ public class ProductTest extends BaseTest{
 	driver.findElement(By.xpath("//input[@id='Phone']")).sendKeys(phone);*/
 	
 	}
+	
+@BeforeClass
+	
+	public void launchApplication() throws IOException 
+	{
+	Properties prop = new Properties();
+	FileInputStream fis = new FileInputStream (System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\Data.properties");
+	prop.load(fis);
+	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+	//driver=new RemoteWebDriver(new    URL("http://192.168.0.103:4444/wd/hub"), dr);
+driver = new ChromeDriver();
+driver.get(prop.getProperty("url"));
+		driver.get("https://www.geoworkz.com");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+
+	@AfterClass
+	public void closeApplication() 
+	{
+		driver.close();
+}
 	
 }
