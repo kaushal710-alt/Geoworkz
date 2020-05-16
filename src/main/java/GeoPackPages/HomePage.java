@@ -65,6 +65,7 @@ public class HomePage{
 		}
 		Actions a = new Actions (driver);
 		a.moveToElement(driver.findElement(Product)).build().perform();
+		Thread.sleep(1000);
 		driver.findElement(ourPlans).click();
 	}
 }

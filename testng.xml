@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite"  parallel = "tests">
-
-<listeners>
-<listener  class-name="Resources.ExtentReporterNG" />
-<listener  class-name="GeoPackPages.Listener1" />
-</listeners>
-
-<test name="test1">
-
+<suite name="Suite">
 <groups>
-<run>
-<include name = "Smoke" />
+				<run>
+				<include name="Smoke" />
+				</run>
+				</groups>
+				
+	<listeners>
+		<listener class-name="Resources.ExtentReporterNG" />
+		<listener class-name="GeoPackPages.ErrorScreenShotCapture" />
+	</listeners>
+	<test name="TestChrome">
+		<parameter name="browser" value="chrome"  />
+		<classes>
+			<class name="GeoPack.EnterPrizeTest" />
+		</classes>
+	</test> <!-- Test -->
+	
+<!-- 	<test name="TestFirefox"> -->
+	
+<!-- 		<parameter name="browser" value="firefox"  /> -->
+				
+<!-- 		<classes> -->
 
-</run>
+<!-- 			<class name="GeoPack.FreelancerTest" /> -->
+<!-- 			<class name="GeoPack.AgencyTest" /> -->
+<!-- 			<class name="GeoPack.EnterPrizeTest" /> -->
+			
+			
+			
+	
+<!-- 		</classes> -->
 
-</groups>
-		  
-    <classes>
-      <class name="GeoPack.EnterPrizeTest" >
-      <methods>
-      <include name = "EnterprizeAnnually10000SmallestNoExtSupport" />
-      
-      </methods>
-      </class>
-    </classes>
-  </test> <!-- Test -->
+<!-- 	</test> Test -->
 </suite> <!-- Suite -->

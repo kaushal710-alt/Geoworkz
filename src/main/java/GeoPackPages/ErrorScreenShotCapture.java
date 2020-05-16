@@ -11,8 +11,10 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Listener1 implements ITestListener{
+public class ErrorScreenShotCapture implements ITestListener{
 
+	
+	public static  String imgpath="";
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -37,15 +39,31 @@ public class Listener1 implements ITestListener{
 		int num = r.nextInt(1000);
 		TakesScreenshot ts = (TakesScreenshot) BaseTest.driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File (System.getProperty("user.dir") +"\\ScreenShots\\"+name+num+"error.png");
-		//File dest = new File (System.getProperty("user.dir")+ "\\ScreenShots" + name + "error.png");
-		//File dest = new File ("C:\\Users\\cc\\Desktop\\Testing\\Selenium\\Projects\\Geoworkz\\ScreenShots\\" + name + "error.png");
-		try {
-			FileUtils.copyFile(source, dest);
+		 String dest=System.getProperty("user.dir")+"\\ScreenShots\\"+result.getName()+num+"error.png";
+        File destFile=  new File(dest);
+         
+         imgpath=dest;
+         
+//
+//         //Copy file at destination
+//
+        try {
+			FileUtils.copyFile(source, destFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//         
+//         String img=test.addScreenCapture(imgpath);
+//	
+//	test.log(LogStatus.FAIL, img);
+	
+//	try {
+//			//FileUtils.copyFile(source, dest);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	@Override

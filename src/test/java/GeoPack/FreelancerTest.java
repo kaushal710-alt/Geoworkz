@@ -60,7 +60,7 @@ public class FreelancerTest extends BaseTest {
 		UtilityFunctions.checkoutProcessWithoutExtSupport();
 	}
 	
-	@Test  (groups= {"Smoke", "Regression"}, priority=6)
+	@Test  (groups= {"Regression"}, priority=6)
 	public void FreelancerMonthly30000WithExtSupport() throws InterruptedException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupport();

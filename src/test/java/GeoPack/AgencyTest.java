@@ -59,7 +59,7 @@ public class AgencyTest extends BaseTest {
 		UtilityFunctions.checkoutProcessWithoutExtSupportAgency();
 	}
 	
-	@Test (groups= {"Smoke", "Regression"} , priority=6)
+	@Test (groups= {"Regression"} , priority=6)
 	public void AgencyMonthly20000WithExtSupport() throws InterruptedException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportAgency();
@@ -89,7 +89,7 @@ public class AgencyTest extends BaseTest {
 		UtilityFunctions.checkoutProcessWithExtSupportAgency();
 	}
 	
-	@Test (groups= {"Regression"} , priority=11)
+	@Test (groups= {"Smoke", "Regression"} , priority=11)
 	public void AgencyAnnually80000NoExtSupport() throws InterruptedException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportAgency();
@@ -119,7 +119,7 @@ public class AgencyTest extends BaseTest {
 		UtilityFunctions.checkoutProcessWithoutExtSupportAgency();
 	}
 	
-	@Test (groups= {"Smoke" ,"Regression"} , priority=16)
+	@Test (groups= {"Regression"} , priority=16)
 	public void AgencyAnnually160000WithExtSupport() throws InterruptedException 
 	{
 		UtilityFunctions.checkoutProcessWithExtSupportAgency();
@@ -219,7 +219,7 @@ public class AgencyTest extends BaseTest {
 		UtilityFunctions.checkoutProcessWithExtSupportAgency();
 	}
 	
-	@Test (groups= {"Smoke","Regression"} , priority=33)
+	@Test (groups= {"Regression"} , priority=33)
 	public void AgencyMonthly1000000NoExtSupport() throws InterruptedException 
 	{
 		UtilityFunctions.checkoutProcessWithoutExtSupportAgency();

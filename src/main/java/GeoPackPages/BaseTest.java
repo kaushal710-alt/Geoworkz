@@ -29,21 +29,24 @@ public class BaseTest {
 	public static WebDriver driver=null;
 	Properties prop;
 	//DesiredCapabilities dr=null;
-	//@Parameters ({"browser"})
+	@Parameters ({"browser"})
 	@BeforeMethod (alwaysRun=true)
 	
-	public void initializeDriver () throws IOException, InterruptedException 
+	public void initializeDriver (String browserName) throws IOException, InterruptedException 
 	{
 		//
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream (System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\Data.properties");
 		prop.load(fis);
 		
-		String browserName = prop.getProperty("browser");
+		//String browserName = prop.getProperty("browser");
 		
 		if (browserName.equalsIgnoreCase("chrome")) 
 		{	
+			
 			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+			//ChromeOptions opt=new ChromeOptions();
+			//opt.setPageLoadStrategy(PageLoadStrategy.NONE);
 			driver = new ChromeDriver();
 			driver.get(prop.getProperty("url"));
 		
@@ -63,11 +66,11 @@ public class BaseTest {
 //		 }   
 		
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
 
-@AfterMethod (alwaysRun=true) 
+//@AfterMethod (alwaysRun=true) 
 public void tearDown() 
     {
 	driver.quit();	
