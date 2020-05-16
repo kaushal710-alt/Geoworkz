@@ -17,6 +17,7 @@
         <methods>
           <include name="initializeDriver"/>
           <include name="EnterprizeAnnually10000SmallestNoExtSupport"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- GeoPack.EnterPrizeTest -->
     </classes>

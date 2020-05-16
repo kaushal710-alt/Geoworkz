@@ -19,18 +19,11 @@
 	</test> <!-- Test -->
 	
 <!-- 	<test name="TestFirefox"> -->
-	
 <!-- 		<parameter name="browser" value="firefox"  /> -->
-				
 <!-- 		<classes> -->
-
 <!-- 			<class name="GeoPack.FreelancerTest" /> -->
 <!-- 			<class name="GeoPack.AgencyTest" /> -->
 <!-- 			<class name="GeoPack.EnterPrizeTest" /> -->
-			
-			
-			
-	
 <!-- 		</classes> -->
 
 <!-- 	</test> Test -->
