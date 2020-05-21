@@ -32,6 +32,7 @@ public class FreelancerTest extends BaseTest {
 	@Test (groups= {"Smoke","Regression"}, priority=1)
 	public void FreelancerMonthly5000NoExtSupport() throws InterruptedException 
 	{
+		String text="MonthlyCost1";
 		UtilityFunctions.checkoutProcessWithoutExtSupport();
 	}
 	

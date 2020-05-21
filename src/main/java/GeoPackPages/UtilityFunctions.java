@@ -78,4 +78,32 @@ public class UtilityFunctions extends BaseTest{
 		cp.supportDropDown();
 		cp.clickCheckoutButton();
 	}
+	
+//	public static String getTestDataFromXMLFile(String strXpath) {
+//		String valTobereturned = null;
+//		try {
+//
+//			strXpath = "Automation/" + getpropertyFromPropertyfile("AppEnv") + "/" + strXpath;
+//			File xmlfile = new File("TestData.xml");
+//
+//			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+//
+//			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+//
+//			Document doc = dBuilder.parse(xmlfile);
+//
+//			doc.getDocumentElement().normalize();
+//
+//			XPath xPath = XPathFactory.newInstance().newXPath();
+//
+//			NodeList nodelst = (NodeList) xPath.compile(strXpath).evaluate(doc, XPathConstants.NODESET);
+//
+//			valTobereturned = nodelst.item(0).getTextContent();
+//		} catch (Exception e) {
+//
+//			Assert.fail("exception occured while reading data from xml file: " + e.toString());
+//		}
+//
+//		return valTobereturned;
+//	}
 }

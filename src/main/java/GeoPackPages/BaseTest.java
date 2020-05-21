@@ -29,34 +29,49 @@ public class BaseTest {
 	public static WebDriver driver=null;
 	Properties prop;
 	//DesiredCapabilities dr=null;
-	@Parameters ({"browser"})
+	//@Parameters ({"browser"})
 	@BeforeMethod (alwaysRun=true)
 	
-	public void initializeDriver (String browserName) throws IOException, InterruptedException 
+	public void initializeDriver () throws IOException, InterruptedException 
 	{
 		//
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream (System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\Data.properties");
 		prop.load(fis);
 		
-		//String browserName = prop.getProperty("browser");
+		String browserName = prop.getProperty("browser");
 		
 		if (browserName.equalsIgnoreCase("chrome")) 
 		{	
+			//Below code for this machine
 			
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
-			//ChromeOptions opt=new ChromeOptions();
-			//opt.setPageLoadStrategy(PageLoadStrategy.NONE);
-			driver = new ChromeDriver();
-			driver.get(prop.getProperty("url"));
-		
-		}
-		else if(browserName.equals("firefox"))
-		{
-			 System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+ "\\geckodriver.exe");
-			   driver = new FirefoxDriver();
-			   driver.get(prop.getProperty("url"));
-		 }
+			
+			  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
+			  "\\chromedriver.exe");
+			  
+			  driver = new ChromeDriver(); 
+			  driver.get(prop.getProperty("url"));
+			 
+			
+			//Below code for remote machine
+			
+//			DesiredCapabilities dc = DesiredCapabilities.chrome();
+//			
+//			 driver = new RemoteWebDriver (new URL ("http://192.168.0.102:4444/wd/hub"),dc);
+//			
+//			 driver.get(prop.getProperty("url"));
+//			
+//			
+//		
+//		}
+//		else if(browserName.equals("firefox"))
+//		{
+//			
+//			//Below code for remote machine
+//			DesiredCapabilities dc = DesiredCapabilities.firefox();
+//			 driver = new RemoteWebDriver (new URL ("http://192.168.0.102:4444/wd/hub"),dc);
+//			driver.get(prop.getProperty("url"));
+//		 }
 //		 //else if(browserName.equals("IE"))
 //		 {
 //			 
@@ -69,7 +84,7 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
-
+	}
 @AfterMethod (alwaysRun=true) 
 public void tearDown() 
     {

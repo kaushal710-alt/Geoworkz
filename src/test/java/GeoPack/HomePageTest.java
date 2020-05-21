@@ -1,5 +1,9 @@
 package GeoPack;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,17 +15,18 @@ import com.sun.tools.sjavac.Log;
 
 import GeoPackPages.BaseTest;
 import GeoPackPages.HomePage;
+import GeoPackPages.ReadingFromExcel1;
 import junit.framework.Assert;
 
-public class HomePageTest extends BaseTest {
+public class HomePageTest {
 	
 	private static Logger log = LogManager.getLogger(HomePageTest.class.getName());
 	HomePage home;
 	public void initializeHomepage () 
 	{
-		home = new HomePage(driver);
+		//home = new HomePage(driver);
 	}
-	@Test
+	//@Test
 	public void logoValidation () 
 	{
 		initializeHomepage ();
@@ -29,7 +34,7 @@ public class HomePageTest extends BaseTest {
 	    
 	    
 	}
-    @Test
+    //@Test
 	public void HomeLinkValidation () 
 	{
     	initializeHomepage ();
@@ -37,7 +42,7 @@ public class HomePageTest extends BaseTest {
 	    
 	}
     
-    @Test
+    //@Test
    	public void SupportLinkValidation () 
    	{
     	initializeHomepage ();
@@ -55,11 +60,20 @@ public class HomePageTest extends BaseTest {
    	    home.getContactLinkPresence();
    	}
     
-	
-    @AfterClass
+	@Test
+	public void testing () throws IOException 
+	{
+		ReadingFromExcel1 rfe = new ReadingFromExcel1 ();
+		String planType = "FreelancerMonthly5000NoExtSupport";
+		HashMap<String, String> list1 = rfe.verifyCartPageDetails(planType);
+		System.out.println(list1);
+		
+		
+	}
+    //@AfterClass
 	public void closeApplication() 
 	{
-		driver.close();
+		//driver.close();
 	}
 	 
 }
