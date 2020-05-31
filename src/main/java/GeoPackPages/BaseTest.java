@@ -1,4 +1,4 @@
-package GeoPackPages;
+package geoPackPages;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

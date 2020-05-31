@@ -1,4 +1,4 @@
-package GeoPackPages;
+package geoPackPages;
 
 import java.util.List;
 

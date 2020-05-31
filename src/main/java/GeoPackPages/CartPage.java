@@ -1,4 +1,4 @@
-package GeoPackPages;
+package geoPackPages;
 
 import java.util.List;
 
@@ -42,6 +42,13 @@ public class CartPage extends BaseTest{
 		js.executeScript("arguments[0].click();", element);
 		//driver.findElement(By.xpath("//button[@id='btnCheckout']")).click();
 		
+	}
+	
+	public void addAdditionalLicense(int i) 
+	{
+		WebElement obj = driver.findElement(By.xpath("//select[contains(@id,'NoOfLicense')]"));
+		Select licenseDropDown = new Select (obj);
+		licenseDropDown.selectByIndex(i);
 	}
 	
 	public void clickOnCheckoutButton() 

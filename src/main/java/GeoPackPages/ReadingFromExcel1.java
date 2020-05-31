@@ -1,4 +1,4 @@
-package GeoPackPages;
+package geoPackPages;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -125,6 +125,9 @@ public HashMap<String, String> verifyCartPageDetails (String planType) throws IO
 					
 					String subTotal =  getSubTotal (row,k,planType);
 					map.put("SubTotal", subTotal);
+					
+					String addLicenses = getNumberOfAddLicenses (row, k,planType);
+					map.put("NumberOfAdditionalLicenses",addLicenses);
 				}	
 			}
 			
@@ -208,12 +211,9 @@ public String getNumberOfLicenses(Row row, int k, String planType) {
 	}
 	else 
 	{
-		numberOfLicenses = NumberToTextConverter.toText(row.getCell(k+3).getNumericCellValue());
-		
+		numberOfLicenses = NumberToTextConverter.toText(row.getCell(k+3).getNumericCellValue());	
     }
-	
 	return numberOfLicenses;
-	
 }
 
 public String getPackageDetails(Row row, int k, String planType) {
@@ -241,18 +241,38 @@ public String getSubTotal(Row row, int k, String planType) {
 	
 	String subTotal;
 	
-	if (row.getCell(k+5).getCellTypeEnum()==CellType.STRING) 
+	if (row.getCell(k+11).getCellTypeEnum()==CellType.STRING) 
 	{
-		subTotal = row.getCell(k+5).getStringCellValue();
+		subTotal = row.getCell(k+11).getStringCellValue();
 		
 	}
 	else 
 	{
-		subTotal = NumberToTextConverter.toText(row.getCell(k+5).getNumericCellValue());
+		subTotal = NumberToTextConverter.toText(row.getCell(k+11).getNumericCellValue());
 		
     }
 	
 	return subTotal;
+	
+}
+
+public String getNumberOfAddLicenses(Row row, int k, String planType) {
+	// TODO Auto-generated method stub
+	
+	String addLicenses;
+	
+	if (row.getCell(k+8).getCellTypeEnum()==CellType.STRING) 
+	{
+		addLicenses = row.getCell(k+8).getStringCellValue();
+		
+	}
+	//else 
+	//{
+		addLicenses = NumberToTextConverter.toText(row.getCell(k+8).getNumericCellValue());
+		//addLicenses = (int) row.getCell(k+8).getNumericCellValue();
+    //}
+	
+	return addLicenses;
 	
 }
 	

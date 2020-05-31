@@ -23,10 +23,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import GeoPackPages.BaseTest;
-import GeoPackPages.ErrorScreenShotCapture;
-import GeoPackPages.ErrorScreenShotCapture;
-import GeoPackPages.ErrorScreenShotCapture;
+import geoPackPages.BaseTest;
+import geoPackPages.ErrorScreenShotCapture;
  
 public class ExtentReporterNG extends ErrorScreenShotCapture implements IReporter {
 	

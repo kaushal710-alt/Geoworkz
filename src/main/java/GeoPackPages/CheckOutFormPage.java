@@ -1,4 +1,4 @@
-package GeoPackPages;
+package geoPackPages;
 
 import java.io.IOException;
 import java.util.ArrayList;
